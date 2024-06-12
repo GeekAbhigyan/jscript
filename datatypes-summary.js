@@ -37,4 +37,15 @@ let myfunction = function(){
 
 console.log(typeof bigNumber);
 
- 
+ /*************************************************************** */
+
+
+// stack -> primitive 
+
+// heap -> non primitive 
+
+
+
+
+
+
