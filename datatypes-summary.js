@@ -26,9 +26,9 @@ const bigNumber = 23456789012345678901234567890n;
 let heroes = ["shaktiman","naagraj","doga"];// arrays 
 //objects
 let myObj = {
-    name : "abhi";
-    age : 22;
-    height : 173;
+    name : "abhi",
+    age : 22,
+    height : 173
 }
 
 let myfunction = function(){
