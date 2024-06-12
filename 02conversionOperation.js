@@ -25,3 +25,26 @@ let numb = 23;
 
 let stringNumb = String(numb);
 console.log(typeof stringNumb);
+
+
+//**********************************operations ************* */
+
+let value = 5;
+let negVal= -value;
+console.log(negVal);
+
+console.log(2**8);//power 2^8
+
+let str1 = "hello";
+let str2 = "abhi";
+let str3 = str1 + "  " +str2;
+console.log(str3);
+
+console.log("1"+ 2);
+console.log(1 + "2");
+//tricky
+console.log("1"+2+2);
+console.log(1+2+"2");
+
+
+
