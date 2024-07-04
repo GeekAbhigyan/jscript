@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>chai and code </title>
 </head>
-<body>
+<body style="background-color: #212121; color: #fff;">
     
 </body>
+<script>
+    
+    const div= document.createElement("div")
+
+    
+
+    div.className ="main";
+    div.id = Math.round(Math.random() *10 +1);
+    console.log(div);
+    div.setAttribute("title","generate a title")    // optimised approach
+    div.style.backgroundColor ="green";
+    div.style.padding ="12px";
+    div.innerHTML = "chai and code with abhi ";
+    const addText = document.createTextNode("chai and node with create next node ");
+    div.appendChild(addText);
+    document.body.appendChild(div);
+</script>
 </html>
