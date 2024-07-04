@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai and code </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class = "language">
+        <li>javascript</li>
+    </ul>
+    
+</body>
+ <!-- add the list item -->
+<script>
+
+function addLanguage(langname){
+    const li = document.createElement('li');
+    li.innerHTML = `${langname}`;
+    //inner Html optimised nahi hai 
+    document.querySelector(".language").
+    appendChild(li)
+}
+addLanguage("python")
+addLanguage("typescript")
+
+function addOptimisedLang(langname){
+
+   const li = document.createElement('li');
+   li.appendChild(document.createTextNode(langname))
+    document.querySelector('.language').appendChild(li);
+}
+addOptimisedLang("golang");
+
+
+//replace the value 
+
+const second = document.querySelector("li:nth-child(2)")
+second.innerHTML = "mojo";
+
+//innerHtml is not the optimised approach
+
+//optimised approach
+const newli = document.createElement("li");
+newli.textContent = "Mojo";
+
+second.replaceWith(newli)
+
+//edit
+
+const firstlang = document.querySelector("li:first-child")
+firstlang.outerHTML = `<li>Typescript</li>`
+
+//remove
+
+const lastlang = document.querySelector("li:last-child");
+lastlang.remove();
+
+</script>
+</html>
