@@ -72,3 +72,28 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+## project 3
+
+```javascript
+const colck = document.getElementById("#clock");
+
+let date = new Date()
+console.log(date);
+
+setInterval(function(){
+  let date = new Date()
+console.log(date);
+clock.innerHTML = date.toLocaleTimeString();
+},1000)
+```
+
+## project 4
+
+```javascript
+
+
+
+
+
+
+```
