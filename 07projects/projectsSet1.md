@@ -6,7 +6,7 @@
 
 # solution code
 
-## project 1
+## project 1 :- color selector
 
 ```javascript
 
@@ -41,7 +41,7 @@ buttons.forEach(function(button){
 
 
 ```
-## project2
+## project2 :- BMI calculator
 
 ```javascript
 
@@ -72,7 +72,7 @@ form.addEventListener('submit', function (e) {
 
 
 ```
-## project 3
+## project 3 :- local clock
 
 ```javascript
 const colck = document.getElementById("#clock");
@@ -87,9 +87,127 @@ clock.innerHTML = date.toLocaleTimeString();
 },1000)
 ```
 
-## project 4
+## project 4 :- guess the number
 
 ```javascript
+let randomNum = parseInt(Math.random() * 100 +1);
+const submit = document.querySelector("#subt");
+const userInput = document.querySelector("#guessField");
+const guessSlot = document.querySelector(".guesses");
+const remaining = document.querySelector(".lastResult");
+const lowHigh = document.querySelector(".lowOrHi");
+const startOver =document.querySelector(".resultParas");
+
+
+const p = document.createElement('p');
+
+let prevGuess = [];
+let numGuess = 1;
+
+let playGame = true;
+
+if (playGame){
+   submit.addEventListener('click',function(e){
+    e.preventDefault();
+    const guess =   parseInt(userInput.value);
+    validateGuess(guess);
+   })
+
+}
+
+
+
+function validateGuess(guess){
+  if(isNaN(guess)){
+    alert("please enter a valid number");
+  }
+  else if (guess<1){
+    alert("number is less than 1")
+  }
+  else if (guess>100){
+    alert("number is greater than 100")
+  }
+  else {
+    prevGuess.push(guess);
+    if (numGuess >= 11){
+      displayGuess(guess);
+      displayMessage(`game is over.random number was ${randomNum}`);
+      endGame();
+    }
+
+    else {
+        displayGuess(guess);
+        checkGuess(guess);
+
+    }
+  }
+
+
+}
+
+function checkGuess(guess){
+
+  if (guess===randomNum){
+     displayMessage("you guessed it right");
+     endGame(); 
+  }
+  else if (guess < randomNum){
+      
+      displayMessage("number is too low");
+
+  }
+  else if (guess>randomNum){
+
+    displayMessage("number is too high");
+
+
+  }
+
+
+}
+
+function displayGuess(guess){
+  userInput.value = '';
+  guessSlot.innerHTML += `${guess}  `;
+  numGuess++;
+  remaining.innerHTML =`${11-numGuess}` 
+
+}
+
+function displayMessage(message){
+  lowHigh.innerHTML = `<h2>${message}</h2>`
+
+}
+
+function endGame(){
+  userInput.value ='';
+  userInput.setAttribute(`disabled`,'');
+  // p.classlist.add('button');
+  p.innerHTML= `<h2 id = "newGame">Start New Game</h2>`;
+  startOver.append(p);
+  playGame = false;
+  NewGame()
+}
+
+function NewGame(){
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click',function(e){
+    randomNum = parseInt(Math.random() * 100 +1);
+    prevGuess = [];
+    numGuess = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML =`${11-numGuess}` ;
+    userInput.removeAttribute('disable');
+    startOver.removeChild(p);
+    
+    
+    playGame = true;
+  })
+
+
+
+}
+
 
 
 
@@ -97,3 +215,7 @@ clock.innerHTML = date.toLocaleTimeString();
 
 
 ```
+
+### issme jo hai eo endgeme wale function me wo add button kaam nahi kar raha hai 
+
+### look into the matter at the time of revision 
