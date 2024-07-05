@@ -115,8 +115,6 @@ if (playGame){
 
 }
 
-
-
 function validateGuess(guess){
   if(isNaN(guess)){
     alert("please enter a valid number");
@@ -138,11 +136,8 @@ function validateGuess(guess){
     else {
         displayGuess(guess);
         checkGuess(guess);
-
     }
   }
-
-
 }
 
 function checkGuess(guess){
@@ -152,18 +147,12 @@ function checkGuess(guess){
      endGame(); 
   }
   else if (guess < randomNum){
-      
       displayMessage("number is too low");
 
   }
   else if (guess>randomNum){
-
     displayMessage("number is too high");
-
-
   }
-
-
 }
 
 function displayGuess(guess){
@@ -171,12 +160,10 @@ function displayGuess(guess){
   guessSlot.innerHTML += `${guess}  `;
   numGuess++;
   remaining.innerHTML =`${11-numGuess}` 
-
 }
 
 function displayMessage(message){
   lowHigh.innerHTML = `<h2>${message}</h2>`
-
 }
 
 function endGame(){
@@ -203,16 +190,7 @@ function NewGame(){
     
     playGame = true;
   })
-
-
-
 }
-
-
-
-
-
-
 
 ```
 
