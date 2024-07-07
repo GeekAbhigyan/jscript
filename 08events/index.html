@@ -12,13 +12,101 @@
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div>
 </body>
 <script>
+
+//  document.getElementById("owl").onclick=function(){
+//     alert("owl clicked")
+//  }
+ // less features
+
+
+ // attachEvent()
+ //jquery- on
+ 
+ //Topics for the interview
+ 
+ //type , timestamp , default prevented 
+ // target , to Element , srcELement , CurrentTarget
+ //clientX , clientY , screenX , screenY
+ //altkey , ctrlkey , shiftkey , keycode 
+
+
+
+ //addEventListener has more features than the above two
+
+//  document.getElementById('owl').addEventListener('click',function(e){
+//     e.preventDefault();          
+//     console.log("clicked on the owl");
+//  },false)
+
+//  document.getElementById('images').addEventListener('click',function(e){
+//        e.preventDefault(); 
+//        e.stopPropagation()   
+//         console.log("clicked inside theeeeeeeee ul");
+            
+//  },false)
+
+//event propagation -> false and true 
+
+// false -> bubbling -> inside to outside 
+// true ->  capturing -> outside to inside 
+
+document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault();
+    e.stopPropagation()
+    console.log("google prevented");
+},false)
+
+//.stopPropagation
+//.preventDefault
+
+// # and . both are used in the query selector for id and class respectively
+
+
+
+const appy = document.getElementById("images");
+console.log(appy);
+
+
+document.querySelector("#images").addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+
+
+        console.log(e.target.tagName)
+
+        if(e.target.tagName == 'IMG'){
+            
+        let removeit = e.target.parentNode;
+         removeit.remove();
+
+        }
+
+
+
+        let removeit = e.target.parentNode;
+        // removeit.remove();
+
+        
+
+},false)
+
+
+
+
+
+
+
+
+
+
+
+
         
 </script>
 </html>
