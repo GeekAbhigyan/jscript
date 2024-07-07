@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>chai and code</h1>
+    <button id="stop">stop</button>
 </body>
+<script>
+
+    const sayabhi = function(){
+        console.log("set");
+    }
+
+    const abhi = function(){
+        document.querySelector('h1').innerHTML="best js series";
+    }
+    
+    const changeMe = setTimeout(abhi,2000)
+
+    document.querySelector("#stop").addEventListener('click',function(){
+        
+        clearTimeout(changeMe);                 // ye code nahi kaam kar raha hai 
+        
+
+        console.log("stopped");
+    })
+
+    
+    setTimeout(sayabhi,2000)
+</script>
 </html>
