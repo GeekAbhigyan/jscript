@@ -86,47 +86,47 @@ promisefour
 
 })
 
-const promisefive = new Promise ((resolve,reject)=>{
-    setTimeout(function(){
-        let error = true;
+// const promisefive = new Promise ((resolve,reject)=>{
+//     setTimeout(function(){
+//         let error = true;
 
-        if (!error){
-            resolve({username:"javascript", password:"1234"})
-        }
-        else {
-            reject('ERROR:javascript went wrong')
-        }
+//         if (!error){
+//             resolve({username:"javascript", password:"1234"})
+//         }
+//         else {
+//             reject('ERROR:javascript went wrong')
+//         }
 
-    },1000)
+//     },1000)
   
   
-})
+// })
 
-async function consumepromisefive(){
-   try {
-    const response = await promisefive
-    console.log(response);
+// async function consumepromisefive(){
+//    try {
+//     const response = await promisefive
+//     console.log(response);
     
-   } catch (error) {
-    console.log("error")
-   }
-}
+//    } catch (error) {
+//     console.log("error")
+//    }
+// }
 
-consumepromisefive()
+// consumepromisefive()
 
-async function getAllUsers(){
-    try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/users")
-const data = await response.json();
-console.log(data);
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch("https://jsonplaceholder.typicode.com/users")
+// const data = await response.json();
+// console.log(data);
 
         
-    } catch (error) {
-        console.log("error");
+//     } catch (error) {
+//         console.log("error");
         
-    }
-}
-getAllUsers();
+//     }
+// }
+// getAllUsers();
 
 fetch("https://jsonplaceholder.typicode.com/users")
 .then((response)=>{
