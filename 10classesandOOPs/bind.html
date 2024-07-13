@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react</title>
+</head>
+<body>
+    <button>button clicked</button>
+</body>
+<script>
+    class React{
+       constructor(){
+        this.library = "raact";
+        this.server = "https://localhost:300";
+
+        // requirement 
+        document
+            .querySelector('button')
+            .addEventListener('click',this.handleClick
+            .bind(this));
+        
+            // bind keyword binds this reference of button onto the handle click so that the 
+            //handleclick function when called can also acces the this of the
+            // react function reference 
+             
+
+
+
+       } 
+
+       handleClick(){
+        console.log("btton clicked");
+        console.log(this.server);
+       }
+    }
+
+    const app = new React();
+</script>
+</html>
