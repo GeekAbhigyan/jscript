@@ -56,3 +56,5 @@ String.prototype.truelength = function(){
 
 }
 anotherusername.truelength();
+
+// this batata hai current execution context 
